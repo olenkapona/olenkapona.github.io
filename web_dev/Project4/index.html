@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <link rel="stylesheet" media="screen" href="CSS/styles.css">
+            <title>Grafka brand</title>
+    </head>
+<body>
+        
+        <img  src="logo.png" align="left" style="width:20%">
+            <h1 style="text-align: top; margin-left: 40%; margin-right: 40%;"><em>Brand of clothes </em></h1>
+
+            <p> Dont know how to make an order? Want to fond out more about us? Click on "Read more"<span id="dots">...</span><span id="more">We have a lot of products, that you can see in table on our site.You can also order things with your own print? but be careful!We cant print photos, because we draw all prins with our hands.You can also go to our page by clicking on "Call" and look at our works. </span></p>
+            <button onclick="myFunction()" id="myBtn">Read more</button>
+
+        <div  class="w3-content w3-display-container" >
+           
+          <img class="mySlides" src="1.jpg"  style="width:20%">
+          <img class="mySlides" src="2.jpg"  style="width:20%">
+          <img class="mySlides" src="3.jpg"  style="width:20%">
+          <img class="mySlides" src="4.jpg"  style="width:20%">
+        </div>
+      
+<script>
+        var myIndex = 0;
+        carousel();
+        
+        function carousel() {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          myIndex++;
+          if (myIndex > x.length) {myIndex = 1}    
+          x[myIndex-1].style.display = "block";  
+          setTimeout(carousel, 2000); // Change image every 2 seconds
+        }
+        </script>
+
+
+<script>
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
+
+<center><table class="zui-table zui-table-zebra zui-table-horizontal">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Material</th>
+                <th>Color</th>
+                <th>Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>T-shirt</td>
+                <td>cotton</td>
+                <td>black</td>
+                <td>220</td>
+            </tr>
+            <tr>
+                <td>Hoodie</td>
+                <td>cotton</td>
+                <td>black</td>
+                <td>700</td>
+            </tr>
+            <tr>
+                <td>Sweatshirt</td>
+                <td>cotton</td>
+                <td>black</td>
+                <td>350</td>
+            </tr>
+            <tr>
+                <td>Cap</td>
+                <td>cotton</td>
+                <td>black</td>
+                <td>180</td>
+            </tr>    
+        </tbody>
+    </table></center>
+    <form >
+        <input type="submit" class="float" value="Call" />
+    </form>
+
+    <div class="flex-container">
+        <div class="content">
+            <h1>Caution, it's impossible not to fall in love here</h1>
+          </div>
+        <img class="item" src="5.jpeg" style="width:25%">
+        <img class="item" src="7.jpg" style="width:25%">
+        <img class="item" src="6.jpg" style="width:25%">
+        <img class="item" src="8.jpeg" style="width:25%">
+        <img class="item" src="9.jpeg" style="width:25%">
+    </div>
+    <center>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe9pAPhB367Rfbav_x1Ut5TCgT23uiczxZWYWTsqKDeR_2jsw/viewform?entry.129964887=Yes" target="_blank">Fill our Goggle Form</a>
+    <a href="https://www.instagram.com/grafka.brand/?hl=uk" target="_blank">Our Instagram</a>
+    <a href="https://www.facebook.com/olenka.pona" target="_blank">Our Facebook</a>
+    </center>
+</body>
+</html> 
