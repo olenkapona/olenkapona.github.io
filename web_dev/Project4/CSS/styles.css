@@ -58,7 +58,7 @@ body{
 	height:60px;
 	bottom:40px;
 	right:40px;
-	background-color:#f5757b;
+	background-color:rgba(75, 20, 66, 0.863);
 	color:rgb(255, 247, 247);
 	border-radius:40px;
 	text-align:center;
@@ -74,8 +74,8 @@ body{
   .flex-container .content {
     position: absolute;
     bottom: -4%;
-    background: rgb(0, 0, 0); /* Fallback color */
-    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    background: rgb(0, 0, 0); 
+    background: rgba(0, 0, 0, 0.5); 
     color: #f1f1f1;
     width: 75.5%;
     padding: 30px;
@@ -85,14 +85,24 @@ body{
       margin-right: 10%;
   }
   a:link, a:visited {
-    background-color: #ff94ca;
+    background-color: rgba(75, 20, 66, 0.863);
     color: white;
     padding: 15px 25px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    margin-top: 5%;
+    margin-top: 8%;
     border-radius:40px;
+  }
+  .about
+  {
+    position: relative;
+    bottom: -4%;
+    background: rgba(75, 20, 66, 0.863); 
+    color: #f1f1f1;
+    width: 30%;
+    padding: 20px;  
+    margin-top: -11%;
   }
 
   
