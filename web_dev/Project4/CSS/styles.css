@@ -9,7 +9,7 @@ body{
 
 .mySlides {
     display:none;
-    float: right; /* Выравнивание по правому краю */
+    float: right; 
     margin: 0 0 5px 5px;
 }
 #more {
@@ -104,6 +104,20 @@ body{
     padding: 20px;  
     margin-top: -11%;
   }
+  #div1, #div2{
+    position: relative;
+    top: 37%;
+    left: 37%;
+    background-color: #fff;
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    padding: 10px;
+    border: 10px solid rgb(241, 124, 241);
+  }
+
+ 
 
   
 

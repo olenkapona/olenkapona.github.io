@@ -4,6 +4,14 @@
             <link rel="stylesheet" media="screen" href="CSS/styles.css">
             <title>Grafka brand</title>
             <!-- Global site tag (gtag.js) - Google Analytics -->
+            <link rel="stylesheet" href="css/styles.css"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <script type="text/javascript" src="http://code.jQuery.com/jQuery-1.7.2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139148334-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -139,5 +147,232 @@ function myFunction() {
         <label for="post-1" class="read-more-trigger"></label>
       </div>
  
+
+
+      <center><p>JavaScript</p></center> 
+      <center><form id="myForm" action="/action_page.php">
+        First name  : <input type="text" name="fname" required><br>
+        Last name   : <input type="text" name="lname" required><br>
+        Age         : <input type="number" name="age" required><br>
+        Country code(ISO): <input type="text" name="country_code" pattern="[A-Za-z]{3}" title="Three letter country code"><br>
+        <script type= "text/javascript" src = "countries.js"></script>
+        Select Country (with states):   <select id="country" name ="country"></select></br>
+        Select State: <select name ="state" id ="state"></select> </br>
+        Ticket type: <input type="checkbox" name="check1">Blue
+        <input type="checkbox" name="check1">Green
+        <input type="checkbox" name="check1">Red<br>
+        E-mail: <input type="email" value="support@example.com"><br>
+        <input type="button" onclick="validateForm()" value="Submit">
+      </form><br><br></br>
+      <script language="javascript">
+        populateCountries("country", "state"); // first parameter is id of country drop-down and second parameter is id of state drop-down
+      </script></center>
+      
+      <script>
+        function validateForm() {
+          var x = document.forms["myForm"]["fname"].value;
+          var y = document.forms["myForm"]["lname"].value;
+          var n = document.forms["myForm"]["age"].value;
+          if(x == "" && y == "" && n == ""){
+            alert("All fields must be filled out!");
+            return false;
+          } 
+          if(x == "" && y == ""){
+            alert("Name and Last name are required fields!")
+            return false;
+          }    
+          if (x == "") {
+            alert("Name must be filled out!");
+            return false;
+          }
+          if (y == "") {
+            alert("Last name must be filled out!");
+            return false;
+          }
+          if (n == "") {
+            alert("Age must be filled out");
+            return false;
+          }else if(n < 18){
+            alert("You must be at least 20 y.o");
+            return false;
+          } 
+        } 
+        </script>
+
+<center><div class="sobaka"><font size="5"><div><p>Drag and Drop</p></font></div></center>
+<script>
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
+    function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
+    function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+    }
+    </script>
+    
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <img id="sobakaa" src="sobaka1.jpg" draggable="true" ondragstart="drag(event)" id="drag1" width="100" height="100"></img>
+  </div>
+  <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  <br><br><br><br><br><br><br><br>
+
+
+  <center><font size="5"><p>Web Storage</p></font></center>
+  <center><form name="form1">
+      <input type="text" name="text1" placeholder="Enter text...">
+      <br>
+      <input type="button" value="Assign" onClick="AssignValues()">
+      <br>
+      <input type="button" value="Show" onClick="Value1()">
+      <br>
+      <input type="button" value="Delete" onClick="Delete1()">
+      <br>
+</form></center>
+
+<center><font size="5"><p>Web Worker</p></font></center>
+<script>
+    var w;
+    function startWorker() {
+      if(typeof(Worker) !== "undefined") {
+        if(typeof(w) == "undefined") {
+          w = new Worker("worker.js");
+        }
+        w.onmessage = function(event) {
+          document.getElementById("result").innerHTML = event.data;
+        };
+      } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Workers...";
+      }
+    }
+    function stopWorker() { 
+      w.terminate();
+      w = undefined;
+    }
+
+    </script>
+    <center>
+  <p>Count numbers: <output id="result"></output></p>
+  <button onclick="startWorker()">Start </button>
+  <button onclick="stopWorker()">Stop </button></center>
+  <br><br><br>
+
+  <center><font size="5"><p>Ajax</p></font></center>
+  <center><div class="container-fluid">
+      <div class="row text-center">
+          <div class="col-12">
+              <div class="ajax_container">
+                  <form class="ajax_item" name="ajax_form">
+                      <input id="data_url" type="text" name="data_url" value="https://httpbin.org/get">
+                  </form>
+                  <div class="ajax_item">
+                      <a class="waves-effect waves-light btn" onclick="get_ajax('text')"><button>Request  text</button></a>
+                      <a class="waves-effect waves-light btn" onclick="get_ajax('status')"><button>Request_status</button></a>
+                      <a class="waves-effect waves-light btn" onclick="get_ajax('headers')"><button>Request_headers</button></a>
+                  </div>
+                  <div class="ajax_item" id="aj_cont"></div>
+              </div>
+          </div>
+      </div>
+  </div></center>
+  <br><br><br>
+  <div class="container-fluid">
+      <div class="row text-center">
+          <div class="col-6">
+              <h1>JQuery Hide/Show</h1>
+              <div>
+                  <button id="hide" style="margin-bottom: 10px">Hide</button>
+                  <button id="show" style="margin-bottom: 10px">Show</button>
+              </div>
+              <img id="toggle" src="sobaka4.png">
+          </div>
+          <div class="col-6">
+              <h1>JQuery FadeIn/Out</h1>
+              <div>
+                  <button id="fadeIn" style="margin-bottom: 10px">Show up</button>
+                  <button id="fadeOut" style="margin-bottom: 10px">Fade</button>
+              </div>
+              <img id="toggle1" src="sobaka7.jpg">
+          </div>
+      </div>
+  </div>
+  <!--- JQuery Slide Animate -->
+  <div class="container-fluid">
+      <div class="row text-center">
+          <div class="col-6">
+              <h1>JQuery Slide</h1>
+              <div>
+                  <button id="flip" style="margin-bottom: 10px">Slide the image</button>
+              </div>
+              <img id="panel" src="sobaka8.jpg">
+          </div>
+          <div class="col-6">
+              <h1>JQuery Animate</h1>
+              <div>
+                  <button id="animate" style="margin-bottom: 10px">Animate the image</button>
+              </div>
+              <img id="animate1" src="sobaka9.jpg">
+          </div>
+      </div>
+  </div>
+  <div class="container-fluid">
+      <div class="row text-center">
+          <div class="col-6">
+              <h1>JQuery Stop</h1>
+              <div>
+                  <button id="start" style="margin-bottom: 10px">Click to start the animation</button>
+                  <button id="stop" style="margin-bottom: 10px">Click to stop the animation</button>
+              </div>
+              <img id="stop1" src="sobaka10.jpg">
+          </div>
+          <div class="col-6">
+              <h1>JQuery Callback</h1>
+              <div>
+                  <button id="callback" style="margin-bottom: 10px">Callback</button>
+              </div>
+              <img id="callback1" src="sobaka12.jpg">
+          </div>
+      </div>
+  </div>
+  <div class="container-fluid">
+      <div class="row text-center">
+          <div class="col-12">
+              <h1>JQuery Chaining</h1>
+              <div>
+                  <button id="chain" style="margin-bottom: 10px">Start chaining</button>
+              </div>
+              <img id="chain1" src="sobaka11.jpg">
+          </div>
+      </div>
+  </div>
+  <div class="container-fluid">
+      <div class="row text-center">
+          <div class="col-12">
+              <center><div class="relativeForH1"><font size="5"><div><ins><h1>AJAX + JSON</h1></ins></font></div></center>
+              <div class="json_content">
+                  <a id="get_ip"><button style="margin-bottom: 10px">Get IP</button></a>
+                  <div id="ip_div"></div>
+                  <a id="get_headers"><button style="margin-bottom: 10px">Get headers</button></a>
+                  <div id="headers_div"></div>
+                  <a id="get_date"><button style="margin-bottom: 10px">Get date</button></a>
+                  <div id="date_div"></div>
+                  <a id="get_echo"><button style="margin-bottom: 10px">Get echo</button></a>
+                  <div id="echo_div"></div>
+                  <a id="get_valid"><button style="margin-bottom: 10px">Get validation</button></a>
+                  <div id="valid_div"></div>
+                  <a id="get_js_code"><button style="margin-bottom: 10px">Get js_code</button></a>
+                  <div id="js_code_div"></div>
+                  <a id="get_md5"><button style="margin-bottom: 10px">Get md5</button></a>
+                  <div id="md5_div"></div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+<script type="text/javascript" src="script.js"></script>
+
 </body>
 </html> 
